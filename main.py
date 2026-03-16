@@ -8,7 +8,7 @@ flashcards = pd.read_csv("data/french_words.csv")
 to_learn = flashcards.to_dict(orient="records")
 
 
-def load_random_card():
+def next_card():
     current_card = random.choice(to_learn)
     canvas.itemconfig(language_text, text="French")
     canvas.itemconfig(word_text, text=current_card["French"])
@@ -32,14 +32,14 @@ canvas.grid(row=0, column=0, columnspan=2, sticky=W+E)
 
 
 correct_image = PhotoImage(file="images/right.png")
-correct_button = Button(image=correct_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=load_random_card)
+correct_button = Button(image=correct_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=next_card)
 wrong_image = PhotoImage(file="images/wrong.png")
-wrong_button = Button(image=wrong_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=load_random_card)
+wrong_button = Button(image=wrong_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=next_card)
 
 correct_button.grid(row=1, column=1)
 wrong_button.grid(row=1, column=0)
 
-load_random_card()
+next_card()
 
 
 

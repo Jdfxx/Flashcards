@@ -56,14 +56,10 @@ correct_image = PhotoImage(file="images/right.png")
 correct_button = Button(image=correct_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=card_learned)
 wrong_image = PhotoImage(file="images/wrong.png")
 wrong_button = Button(image=wrong_image, highlightbackground=BACKGROUND_COLOR, highlightthickness=0, command=next_card)
-
 correct_button.grid(row=1, column=1)
 wrong_button.grid(row=1, column=0)
 
 next_card()
-
-
-
 
 mainloop()
 
